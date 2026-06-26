@@ -44,6 +44,12 @@ body {
   overflow-x: hidden;
 }
 
+/* Hide page until preloader finishes */
+.site-pending {
+  visibility: hidden;
+  pointer-events: none;
+}
+
 h1,
 h2,
 h3,
@@ -380,6 +386,280 @@ h6 {
     mask-image: none;
     -webkit-mask-image: none;
     overflow: visible;
+  }
+}
+
+/* Site preloader — white theme */
+.preloader-root {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.preloader-mesh {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 75% 60% at 12% 18%, rgba(43, 141, 239, 0.14), transparent),
+    radial-gradient(ellipse 60% 50% at 88% 82%, rgba(90, 168, 245, 0.1), transparent),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 55%, #f0f7ff 100%);
+}
+
+.preloader-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.55;
+  background-image:
+    linear-gradient(rgba(43, 141, 239, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(43, 141, 239, 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 50%, black, transparent);
+}
+
+.preloader-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.preloader-orb-a {
+  top: 6%;
+  left: -10%;
+  width: 20rem;
+  height: 20rem;
+  background: rgba(43, 141, 239, 0.2);
+  animation: preloader-float-a 9s ease-in-out infinite;
+}
+
+.preloader-orb-b {
+  right: -8%;
+  bottom: 8%;
+  width: 17rem;
+  height: 17rem;
+  background: rgba(90, 168, 245, 0.16);
+  animation: preloader-float-b 11s ease-in-out infinite;
+}
+
+.preloader-orb-c {
+  top: 45%;
+  left: 50%;
+  width: 10rem;
+  height: 10rem;
+  transform: translateX(-50%);
+  background: rgba(43, 141, 239, 0.08);
+  animation: preloader-float-c 7s ease-in-out infinite;
+}
+
+.preloader-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.preloader-particle {
+  position: absolute;
+  bottom: -8px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--razo-blue-light), var(--razo-blue));
+  opacity: 0;
+  animation: preloader-rise linear infinite;
+}
+
+.preloader-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(92vw, 22rem);
+  text-align: center;
+}
+
+.preloader-logo-bounce {
+  animation: preloader-logo-bounce 0.7s ease-in-out infinite;
+}
+
+.preloader-logo {
+  height: 3rem;
+  width: auto;
+}
+
+.preloader-tagline {
+  margin-top: 1.4rem;
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--razo-gray);
+}
+
+.preloader-status {
+  margin-top: 1.45rem;
+  display: none;
+}
+
+.preloader-percent {
+  display: none;
+}
+
+.preloader-bar {
+  margin-top: 0.7rem;
+  width: 100%;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(43, 141, 239, 0.1);
+}
+
+.preloader-bar-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    var(--razo-blue-dark),
+    var(--razo-blue),
+    var(--razo-blue-light)
+  );
+  box-shadow: 0 0 10px rgba(43, 141, 239, 0.35);
+}
+
+.preloader-bar-timed {
+  width: 0;
+  animation: preloader-bar-fill 3s linear forwards;
+}
+
+@keyframes preloader-logo-bounce {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  30% {
+    transform: translateY(-18px) scale(1.03);
+  }
+  50% {
+    transform: translateY(0) scale(0.98);
+  }
+  70% {
+    transform: translateY(-10px) scale(1.02);
+  }
+}
+
+@keyframes preloader-bar-fill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.preloader-curtain {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  transform-origin: top center;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    rgba(43, 141, 239, 0.08) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+@keyframes preloader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes preloader-float-a {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(24px, 18px);
+  }
+}
+
+@keyframes preloader-float-b {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-20px, -16px);
+  }
+}
+
+@keyframes preloader-float-c {
+  0%,
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.15);
+  }
+}
+
+@keyframes preloader-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.6);
+  }
+  15% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-110vh) scale(1);
+  }
+}
+
+@keyframes preloader-shine {
+  0%,
+  100% {
+    transform: translateX(-120%);
+  }
+  45%,
+  55% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes preloader-fade-step {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader-logo-bounce,
+  .preloader-bar-timed,
+  .preloader-particle,
+  .preloader-orb-a,
+  .preloader-orb-b,
+  .preloader-orb-c {
+    animation: none;
+  }
+
+  .preloader-bar-timed {
+    width: 100%;
   }
 }
 

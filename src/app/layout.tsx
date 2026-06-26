@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins, Roboto } from "next/font/google";
+import PreloaderGate from "@/components/layout/PreloaderGate";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -39,8 +40,19 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} ${roboto.variable} scroll-smooth`}
     >
+      <head>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              body:has(.site-pending){overflow:hidden!important}
+              .site-pending{visibility:hidden!important;pointer-events:none}
+              .preloader-root{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;background:#ffffff}
+            `,
+          }}
+        />
+      </head>
       <body className={`${roboto.className} min-h-screen antialiased`}>
-        {children}
+        <PreloaderGate>{children}</PreloaderGate>
       </body>
     </html>
   );
