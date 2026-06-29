@@ -28,7 +28,7 @@ const companyLinks = [
   { label: "IT Consulting", href: siteRoutes.itConsulting },
   { label: "Product Engineering", href: siteRoutes.productEngineering },
   { label: "Services", href: homeRoutes.services },
-  { label: "Reach Us", href: homeRoutes.contact },
+  { label: "Reach Us", href: siteRoutes.contact },
 ];
 
 const fadeUp = {

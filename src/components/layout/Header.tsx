@@ -15,8 +15,8 @@ import { isAboutSectionPath } from "@/lib/aboutNav";
 import { industrySectionPaths } from "@/lib/industryNav";
 import { COMPANY_LOGO_URL } from "@/lib/company";
 
-const PHONE = "+91 98765 43210";
-const PHONE_HREF = "tel:+919876543210";
+const PHONE = "+91-8448158188";
+const PHONE_HREF = "tel:+918448158188";
 
 const SECTION_IDS = ["home", "about", "services", "industry", "contact"] as const;
 

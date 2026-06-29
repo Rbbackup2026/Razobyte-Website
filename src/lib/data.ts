@@ -6,7 +6,7 @@ export const navLinks = [
   { label: "About Us", href: siteRoutes.about, hasAboutMenu: true },
   { label: "Services", href: homeRoutes.services, hasMegaMenu: true },
   { label: "Industry", href: homeRoutes.industry, hasIndustryMenu: true },
-  { label: "Reach Us", href: homeRoutes.contact },
+  { label: "Reach Us", href: siteRoutes.contact },
 ] as const;
 
 export function getStats() {
@@ -240,16 +240,18 @@ export const footerServices = {
 export const offices = [
   {
     city: "Gurugram",
-    address: "Plot No. 123, Sector 44, Gurugram, Haryana 122003",
-    phone: "+91 98765 43210",
+    address:
+      "Unit no 243, Tower A, Spaze I-Tech Park, Sector 49, Road, Gurugram 122018, Haryana",
+    phone: "+91-8448158188",
     email: "contact-us@razobyte.com",
     hours: "Mon – Sat: 9:00 AM – 6:00 PM",
   },
   {
     city: "Ahmedabad",
-    address: "Office 456, SG Highway, Ahmedabad, Gujarat 380054",
-    phone: "+91 98765 43211",
-    email: "ahmedabad@razobyte.com",
+    address:
+      "C Siddhi Vinayak Tower, Sarkhej Gandhinagar Hwy, Near DCP Office, Ahmedabad, Gujarat 380051",
+    phone: "+91-8448158188",
+    email: "contact-us@razobyte.com",
     hours: "Mon – Sat: 9:00 AM – 6:00 PM",
   },
 ];

@@ -4,16 +4,17 @@ export const siteRoutes = {
   ourClients: "/about/our-clients",
   /** @deprecated Use ourClients — kept for redirects */
   clients: "/about/our-clients",
-  careers: "/careers",
+  careers: "/about/careers",
   blogs: "/blogs",
   caseStudies: "/case-studies",
-  pricing: "/pricing",
+  pricing: "/about/pricing",
   healthcare: "/healthcare-solutions",
   itConsulting: "/it-consulting",
   productEngineering: "/product-engineering",
   crm: "/crm",
   erp: "/erp",
   customProducts: "/custom-products",
+  contact: "/contact",
 } as const;
 
 /** Homepage section links — always use from any route (e.g. /crm → /#home) */
@@ -24,7 +25,7 @@ export const homeRoutes = {
   services: "/#services",
   customProducts: "/#custom-products",
   industry: "/#industry",
-  contact: "/#contact",
+  contact: "/contact",
 } as const;
 
 export function homeHash(section: string) {
