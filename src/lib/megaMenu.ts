@@ -109,8 +109,8 @@ export const servicesMegaMenu: MegaMenuCard[] = [
         icon: Headphones,
         items: [
           { label: "Website Maintenance", href: siteRoutes.websiteMaintenance },
-          { label: "Mobile App Maintenance", href: homeRoutes.services },
-          { label: "Domain & Hosting Maintenance", href: homeRoutes.services },
+          { label: "Mobile App Maintenance", href: siteRoutes.mobileAppMaintenance },
+          { label: "Domain & Hosting Maintenance", href: siteRoutes.domainHostingMaintenance },
         ],
       },
     ],
@@ -122,8 +122,8 @@ export const servicesMegaMenu: MegaMenuCard[] = [
         title: "Mobile Applications Development",
         icon: Smartphone,
         items: [
-          { label: "Android App", href: homeRoutes.services },
-          { label: "IOS App", href: homeRoutes.services },
+          { label: "Android App", href: siteRoutes.androidAppDevelopment },
+          { label: "IOS App", href: siteRoutes.iosAppDevelopment },
         ],
       },
     ],

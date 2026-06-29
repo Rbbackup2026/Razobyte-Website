@@ -34,6 +34,10 @@ export const siteRoutes = {
   ecommerceWebsiteDevelopment: "/services/development/ecommerce-website-development",
   paymentGateway: "/services/development/payment-gateway",
   websiteMaintenance: "/services/maintenance-and-support/website-maintenance",
+  mobileAppMaintenance: "/services/maintenance-and-support/mobile-app-maintenance",
+  domainHostingMaintenance: "/services/maintenance-and-support/domain-and-hosting-maintenance",
+  androidAppDevelopment: "/services/mobile-application/android-applications-development",
+  iosAppDevelopment: "/services/mobile-application/ios-applications-development",
 } as const;
 
 /** Homepage section links — always use from any route (e.g. /crm → /#home) */
