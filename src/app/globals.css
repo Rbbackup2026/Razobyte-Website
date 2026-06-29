@@ -311,6 +311,28 @@ h6 {
   border-radius: 4px;
 }
 
+.payment-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #6366f1 #eef2ff;
+}
+.payment-scroll::-webkit-scrollbar { height: 6px; }
+.payment-scroll::-webkit-scrollbar-track { background: #eef2ff; border-radius: 4px; }
+.payment-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #6366f1, #10b981);
+  border-radius: 4px;
+}
+
+.maint-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #0ea5e9 #e0f2fe;
+}
+.maint-scroll::-webkit-scrollbar { height: 6px; }
+.maint-scroll::-webkit-scrollbar-track { background: #e0f2fe; border-radius: 4px; }
+.maint-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #0ea5e9, #f59e0b);
+  border-radius: 4px;
+}
+
 /* Game coming-soon effects */
 @keyframes game-blink {
   0%, 49% { opacity: 1; }

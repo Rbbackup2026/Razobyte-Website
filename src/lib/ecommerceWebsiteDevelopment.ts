@@ -146,7 +146,7 @@ export const ecommerceRelated = [
   { label: "Shopify", href: siteRoutes.shopifyDevelopment, icon: "/images/tech/nextjs.svg", description: "Fully hosted e-commerce with apps, themes, and global selling." },
   { label: "WooCommerce", href: siteRoutes.woocommerceDevelopment, icon: "/images/erp/woocommerce.svg", description: "WordPress-powered stores with unlimited customization." },
   { label: "UI/UX Design", href: siteRoutes.uiUxDesign, icon: "/images/tech/react.svg", description: "Conversion-focused store design and checkout UX." },
-  { label: "Digital Marketing", href: homeRoutes.services, icon: "/images/tech/javascript.svg", description: "SEO, PPC, and social campaigns for your store." },
+  { label: "Payment Gateway", href: siteRoutes.paymentGateway, icon: "/images/portfolio-fintech.jpg", description: "Secure Razorpay, Stripe, and PayPal integrations with PCI compliance." },
 ] as const;
 
 export const ecommerceProjects = [

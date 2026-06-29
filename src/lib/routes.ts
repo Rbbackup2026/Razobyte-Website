@@ -32,6 +32,8 @@ export const siteRoutes = {
   reactjsDevelopment: "/services/development/reactjs-development",
   angularJsWebsite: "/services/development/angular-js-website",
   ecommerceWebsiteDevelopment: "/services/development/ecommerce-website-development",
+  paymentGateway: "/services/development/payment-gateway",
+  websiteMaintenance: "/services/maintenance-and-support/website-maintenance",
 } as const;
 
 /** Homepage section links — always use from any route (e.g. /crm → /#home) */

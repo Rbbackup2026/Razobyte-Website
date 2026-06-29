@@ -65,7 +65,7 @@ export const servicesMegaMenu: MegaMenuCard[] = [
           { label: "React js Website", href: siteRoutes.reactjsDevelopment },
           { label: "Angular js Website", href: siteRoutes.angularJsWebsite },
           { label: "E-commerce Website", href: siteRoutes.ecommerceWebsiteDevelopment },
-          { label: "Payment Gateway", href: homeRoutes.services },
+          { label: "Payment Gateway", href: siteRoutes.paymentGateway },
         ],
       },
     ],
@@ -108,7 +108,7 @@ export const servicesMegaMenu: MegaMenuCard[] = [
         title: "Maintenance & Support",
         icon: Headphones,
         items: [
-          { label: "Website Maintenance", href: homeRoutes.services },
+          { label: "Website Maintenance", href: siteRoutes.websiteMaintenance },
           { label: "Mobile App Maintenance", href: homeRoutes.services },
           { label: "Domain & Hosting Maintenance", href: homeRoutes.services },
         ],
