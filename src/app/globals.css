@@ -256,6 +256,17 @@ h6 {
   border-radius: 4px;
 }
 
+.html-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #e34c26 #fff7ed;
+}
+.html-scroll::-webkit-scrollbar { height: 6px; }
+.html-scroll::-webkit-scrollbar-track { background: #eff6ff; border-radius: 4px; }
+.html-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #e34c26, #264de4);
+  border-radius: 4px;
+}
+
 /* Game coming-soon effects */
 @keyframes game-blink {
   0%, 49% { opacity: 1; }

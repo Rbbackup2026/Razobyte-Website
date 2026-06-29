@@ -27,6 +27,7 @@ export const siteRoutes = {
   gameMetaverse: "/services/game-development/metaverse",
   codeigniterWebsite: "/services/development/codeigniter-website-development",
   phpDevelopment: "/services/development/php-development",
+  htmlCssWebsite: "/services/development/html-css-website",
 } as const;
 
 /** Homepage section links — always use from any route (e.g. /crm → /#home) */
