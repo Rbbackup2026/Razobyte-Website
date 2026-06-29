@@ -175,8 +175,8 @@ export const htmlCssDifferentiators = [
 
 export const htmlCssTechnologies = [
   { label: "PHP Website", href: siteRoutes.phpDevelopment, icon: "/images/tech/php.svg" },
-  { label: "React JS", href: homeRoutes.services, icon: "/images/tech/react.svg" },
-  { label: "Laravel", href: homeRoutes.services, icon: "/images/tech/laravel.svg" },
+  { label: "React JS", href: siteRoutes.reactjsDevelopment, icon: "/images/tech/react.svg" },
+  { label: "Laravel", href: siteRoutes.laravelDevelopment, icon: "/images/tech/laravel.svg" },
   { label: "CodeIgniter", href: siteRoutes.codeigniterWebsite, icon: "/images/tech/php.svg" },
   { label: "Shopify", href: siteRoutes.shopifyDevelopment, icon: "/images/tech/nextjs.svg" },
   { label: "WooCommerce", href: siteRoutes.woocommerceDevelopment, icon: "/images/erp/woocommerce.svg" },

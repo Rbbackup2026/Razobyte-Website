@@ -114,8 +114,8 @@ export const codeigniterProjects = [
 
 export const codeigniterRelated = [
   { label: "PHP Website", href: siteRoutes.phpDevelopment },
-  { label: "Laravel Website", href: homeRoutes.services },
-  { label: "React JS Website", href: homeRoutes.services },
+  { label: "Laravel Website", href: siteRoutes.laravelDevelopment },
+  { label: "React JS Website", href: siteRoutes.reactjsDevelopment },
   { label: "Shopify", href: siteRoutes.shopifyDevelopment },
   { label: "WooCommerce", href: siteRoutes.woocommerceDevelopment },
   { label: "Magento", href: siteRoutes.magnetoDevelopment },

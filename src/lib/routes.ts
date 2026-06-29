@@ -28,6 +28,10 @@ export const siteRoutes = {
   codeigniterWebsite: "/services/development/codeigniter-website-development",
   phpDevelopment: "/services/development/php-development",
   htmlCssWebsite: "/services/development/html-css-website",
+  laravelDevelopment: "/services/development/laravel-devlopment",
+  reactjsDevelopment: "/services/development/reactjs-development",
+  angularJsWebsite: "/services/development/angular-js-website",
+  ecommerceWebsiteDevelopment: "/services/development/ecommerce-website-development",
 } as const;
 
 /** Homepage section links — always use from any route (e.g. /crm → /#home) */

@@ -176,9 +176,9 @@ export const phpProjects = [
 
 export const phpRelated = [
   { label: "CodeIgniter", href: siteRoutes.codeigniterWebsite, icon: "/images/tech/php.svg" },
-  { label: "Laravel", href: homeRoutes.services, icon: "/images/tech/laravel.svg" },
+  { label: "Laravel", href: siteRoutes.laravelDevelopment, icon: "/images/tech/laravel.svg" },
   { label: "HTML & CSS", href: siteRoutes.htmlCssWebsite, icon: "/images/tech/javascript.svg" },
-  { label: "React JS", href: homeRoutes.services, icon: "/images/tech/react.svg" },
+  { label: "React JS", href: siteRoutes.reactjsDevelopment, icon: "/images/tech/react.svg" },
   { label: "Shopify", href: siteRoutes.shopifyDevelopment, icon: "/images/tech/nextjs.svg" },
   { label: "WooCommerce", href: siteRoutes.woocommerceDevelopment, icon: "/images/erp/woocommerce.svg" },
   { label: "Magento", href: siteRoutes.magnetoDevelopment, icon: "/images/service-ecommerce.jpg" },
