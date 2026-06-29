@@ -15,6 +15,17 @@ export const siteRoutes = {
   erp: "/erp",
   customProducts: "/custom-products",
   contact: "/contact",
+  uiUxDesign: "/services/design/ui/ux-design",
+  websiteDesign: "/services/design/website-design",
+  shopifyDevelopment: "/services/ecommerce-solutions/shopify-development",
+  opencartDevelopment: "/services/ecommerce-solutions/opencart-development",
+  woocommerceDevelopment: "/services/ecommerce-solutions/wocommerce-development",
+  magnetoDevelopment: "/services/ecommerce-solutions/magneto-development",
+  prestashopDevelopment: "/services/ecommerce-solutions/prestashop-development",
+  game2d: "/services/game-development/2d",
+  game3d: "/services/game-development/3d",
+  gameMetaverse: "/services/game-development/metaverse",
+  codeigniterWebsite: "/services/development/codeigniter-website-development",
 } as const;
 
 /** Homepage section links — always use from any route (e.g. /crm → /#home) */

@@ -8,7 +8,7 @@ import {
   Smartphone,
   type LucideIcon,
 } from "lucide-react";
-import { homeRoutes } from "./routes";
+import { homeRoutes, siteRoutes } from "./routes";
 
 export type MegaMenuItem = {
   label: string;
@@ -34,19 +34,19 @@ export const servicesMegaMenu: MegaMenuCard[] = [
         title: "Design",
         icon: PenTool,
         items: [
-          { label: "UI/UX Design", href: homeRoutes.services },
-          { label: "Website Design", href: homeRoutes.services },
+          { label: "UI/UX Design", href: siteRoutes.uiUxDesign },
+          { label: "Website Design", href: siteRoutes.websiteDesign },
         ],
       },
       {
         title: "Ecommerce Solutions",
         icon: ShoppingCart,
         items: [
-          { label: "Shopify", href: homeRoutes.services },
-          { label: "OpenCart", href: homeRoutes.services },
-          { label: "Woocommerce", href: homeRoutes.services },
-          { label: "Magento", href: homeRoutes.services },
-          { label: "Prestashop", href: homeRoutes.services },
+          { label: "Shopify", href: siteRoutes.shopifyDevelopment },
+          { label: "OpenCart", href: siteRoutes.opencartDevelopment },
+          { label: "Woocommerce", href: siteRoutes.woocommerceDevelopment },
+          { label: "Magento", href: siteRoutes.magnetoDevelopment },
+          { label: "Prestashop", href: siteRoutes.prestashopDevelopment },
         ],
       },
     ],
@@ -58,7 +58,7 @@ export const servicesMegaMenu: MegaMenuCard[] = [
         title: "Website Development",
         icon: Code2,
         items: [
-          { label: "CodeIgniter Website", href: homeRoutes.services },
+          { label: "CodeIgniter Website", href: siteRoutes.codeigniterWebsite },
           { label: "Php Website", href: homeRoutes.services },
           { label: "Html & Css Website", href: homeRoutes.services },
           { label: "Laravel Website", href: homeRoutes.services },
@@ -94,9 +94,9 @@ export const servicesMegaMenu: MegaMenuCard[] = [
         title: "Game Development",
         icon: Gamepad2,
         items: [
-          { label: "2D", href: homeRoutes.services },
-          { label: "3D", href: homeRoutes.services },
-          { label: "Meta Verse", href: homeRoutes.services },
+          { label: "2D", href: siteRoutes.game2d },
+          { label: "3D", href: siteRoutes.game3d },
+          { label: "Meta Verse", href: siteRoutes.gameMetaverse },
         ],
       },
     ],
