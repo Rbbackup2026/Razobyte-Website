@@ -245,6 +245,17 @@ h6 {
   border-radius: 4px;
 }
 
+.php-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #777bb4 #f5f3ff;
+}
+.php-scroll::-webkit-scrollbar { height: 6px; }
+.php-scroll::-webkit-scrollbar-track { background: #f5f3ff; border-radius: 4px; }
+.php-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #777bb4, #2b8def);
+  border-radius: 4px;
+}
+
 /* Game coming-soon effects */
 @keyframes game-blink {
   0%, 49% { opacity: 1; }

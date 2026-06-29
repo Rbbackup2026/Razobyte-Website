@@ -113,7 +113,7 @@ export const codeigniterProjects = [
 ] as const;
 
 export const codeigniterRelated = [
-  { label: "PHP Website", href: homeRoutes.services },
+  { label: "PHP Website", href: siteRoutes.phpDevelopment },
   { label: "Laravel Website", href: homeRoutes.services },
   { label: "React JS Website", href: homeRoutes.services },
   { label: "Shopify", href: siteRoutes.shopifyDevelopment },
