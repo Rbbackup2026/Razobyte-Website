@@ -38,6 +38,12 @@ export const siteRoutes = {
   domainHostingMaintenance: "/services/maintenance-and-support/domain-and-hosting-maintenance",
   androidAppDevelopment: "/services/mobile-application/android-applications-development",
   iosAppDevelopment: "/services/mobile-application/ios-applications-development",
+  seoSearchEngineOptimization: "/services/digital-marketing/seo-search-engine-optimization",
+  semSearchEngineMarketing: "/services/digital-marketing/sem-search-engine-marketing",
+  smoSocialMediaOptimization: "/services/digital-marketing/smo/social-media-optimization",
+  smmSocialMediaMarketing: "/services/digital-marketing/smm/social-media-marketing",
+  emailMarketing: "/services/digital-marketing/email-marketing",
+  performanceMarketing: "/services/digital-marketing/performance-marketing",
 } as const;
 
 /** Homepage section links — always use from any route (e.g. /crm → /#home) */
