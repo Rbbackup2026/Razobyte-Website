@@ -19,7 +19,7 @@ import { homeRoutes, siteRoutes } from "@/lib/routes";
 const companyLinks = [
   { label: "Home", href: homeRoutes.home },
   { label: "About Us", href: siteRoutes.about },
-  { label: "Our Clients", href: siteRoutes.clients },
+  { label: "Our Clients", href: siteRoutes.ourClients },
   { label: "Case Studies", href: siteRoutes.caseStudies },
   { label: "Blogs", href: siteRoutes.blogs },
   { label: "Careers", href: siteRoutes.careers },

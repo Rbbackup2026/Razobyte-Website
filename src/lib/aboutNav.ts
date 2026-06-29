@@ -20,7 +20,7 @@ export const aboutNavItems: AboutNavItem[] = [
   {
     label: "Our Clients",
     description: "Brands and businesses we've partnered with",
-    href: siteRoutes.clients,
+    href: siteRoutes.ourClients,
     icon: Users,
   },
   {
@@ -58,9 +58,14 @@ export const aboutOverview = {
 
 export const aboutSectionPaths = [
   siteRoutes.about,
-  siteRoutes.clients,
+  siteRoutes.ourClients,
   siteRoutes.careers,
   siteRoutes.blogs,
   siteRoutes.caseStudies,
   siteRoutes.pricing,
 ] as const;
+
+/** True when current path is any About section (incl. /about/our-clients) */
+export function isAboutSectionPath(pathname: string) {
+  return (aboutSectionPaths as readonly string[]).includes(pathname);
+}

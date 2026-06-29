@@ -1,7 +1,9 @@
 /** Standalone site pages */
 export const siteRoutes = {
   about: "/about",
-  clients: "/clients",
+  ourClients: "/about/our-clients",
+  /** @deprecated Use ourClients — kept for redirects */
+  clients: "/about/our-clients",
   careers: "/careers",
   blogs: "/blogs",
   caseStudies: "/case-studies",

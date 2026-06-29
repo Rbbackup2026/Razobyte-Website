@@ -11,7 +11,7 @@ import { sectionIdFromHref, homeRoutes } from "@/lib/routes";
 import ServicesMegaMenu from "@/components/layout/ServicesMegaMenu";
 import AboutDropdown from "@/components/layout/AboutDropdown";
 import IndustryDropdown from "@/components/layout/IndustryDropdown";
-import { aboutSectionPaths } from "@/lib/aboutNav";
+import { isAboutSectionPath } from "@/lib/aboutNav";
 import { industrySectionPaths } from "@/lib/industryNav";
 import { COMPANY_LOGO_URL } from "@/lib/company";
 
@@ -67,10 +67,7 @@ export default function Header() {
   const isLinkActive = useCallback(
     (href: string, menu?: "services" | "about" | "industry") => {
       if (menu === "about") {
-        return (
-          (aboutSectionPaths as readonly string[]).includes(pathname) ||
-          aboutOpen
-        );
+        return isAboutSectionPath(pathname) || aboutOpen;
       }
       if (menu === "industry") {
         return (
@@ -317,7 +314,7 @@ export default function Header() {
                     />
                   )}
                   <span className="relative z-10 flex items-center gap-0.5">
-                    About
+                    {link.label}
                     <ChevronDown
                       size={14}
                       className={`transition-transform duration-200 ${aboutOpen ? "rotate-180" : ""}`}
@@ -561,7 +558,7 @@ export default function Header() {
                     {isLinkActive(link.href, "about") && (
                       <span className="absolute inset-0 bg-razo-blue/[0.06]" />
                     )}
-                    <span className="relative z-10">About</span>
+                    <span className="relative z-10">{link.label}</span>
                     <ChevronDown
                       size={16}
                       className={`relative z-10 text-razo-blue transition-transform duration-200 ${mobileAboutOpen ? "rotate-180" : ""}`}

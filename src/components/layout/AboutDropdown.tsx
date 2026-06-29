@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { aboutNavItems, aboutOverview } from "@/lib/aboutNav";
@@ -15,6 +16,7 @@ export default function AboutDropdown({
   onClose,
   variant = "dropdown",
 }: AboutDropdownProps) {
+  const pathname = usePathname();
   const OverviewIcon = aboutOverview.icon;
 
   if (variant === "mobile") {
@@ -43,7 +45,7 @@ export default function AboutDropdown({
                 key={item.label}
                 href={item.href}
                 onClick={onClose}
-                className="flex items-center gap-3 rounded-xl border border-gray-100 bg-white p-3 shadow-sm transition-all hover:border-razo-blue/25 hover:shadow-md"
+                className={`flex items-center gap-3 rounded-xl border bg-white p-3 shadow-sm transition-all hover:border-razo-blue/25 hover:shadow-md ${pathname === item.href ? "border-razo-blue/30 bg-razo-blue/[0.06]" : "border-gray-100"}`}
               >
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-razo-blue/10 text-razo-blue">
                   <Icon size={16} />
@@ -97,6 +99,7 @@ export default function AboutDropdown({
         <div className="grid grid-cols-2 gap-2 p-3 sm:grid-cols-2">
           {aboutNavItems.map((item, i) => {
             const Icon = item.icon;
+            const active = pathname === item.href;
             return (
               <motion.div
                 key={item.label}
@@ -107,13 +110,13 @@ export default function AboutDropdown({
                 <Link
                   href={item.href}
                   onClick={onClose}
-                  className="group flex h-full items-start gap-3 rounded-xl p-3 transition-all hover:bg-razo-blue/[0.05]"
+                  className={`group flex h-full items-start gap-3 rounded-xl p-3 transition-all hover:bg-razo-blue/[0.05] ${active ? "bg-razo-blue/[0.06]" : ""}`}
                 >
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-razo-blue/15 to-razo-blue/5 text-razo-blue ring-1 ring-razo-blue/10 transition-transform group-hover:scale-105">
                     <Icon size={18} />
                   </span>
                   <div className="min-w-0 pt-0.5">
-                    <p className="flex items-center gap-1 text-[13px] font-bold text-razo-dark transition-colors group-hover:text-razo-blue">
+                    <p className={`flex items-center gap-1 text-[13px] font-bold transition-colors ${active ? "text-razo-blue" : "text-razo-dark group-hover:text-razo-blue"}`}>
                       {item.label}
                       <ArrowRight
                         size={12}

@@ -3,7 +3,7 @@ import { formatYearsPlus } from "./company";
 
 export const navLinks = [
   { label: "Home", href: homeRoutes.home },
-  { label: "About", href: siteRoutes.about, hasAboutMenu: true },
+  { label: "About Us", href: siteRoutes.about, hasAboutMenu: true },
   { label: "Services", href: homeRoutes.services, hasMegaMenu: true },
   { label: "Industry", href: homeRoutes.industry, hasIndustryMenu: true },
   { label: "Reach Us", href: homeRoutes.contact },
