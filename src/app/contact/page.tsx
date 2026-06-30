@@ -9,8 +9,8 @@ export const metadata: Metadata = {
     "Get in touch with Razobyte — call +91-8448158188 or book a free session. Offices in Gurugram and Ahmedabad. Website, app, CRM & digital solutions.",
   keywords: [
     "contact Razobyte",
-    "Razobyte Gurugram",
-    "Razobyte Ahmedabad",
+    "Gurugram",
+    "Ahmedabad",
     "book consultation",
     "IT company contact",
   ],

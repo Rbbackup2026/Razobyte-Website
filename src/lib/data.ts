@@ -55,6 +55,12 @@ export const services = [
       "Human-centered interfaces that delight users and drive results.",
     image: "/images/service-design.jpg",
   },
+  {
+    title: "Website Maintenance",
+    description:
+      "Keep your site secure, fast, and up to date with expert ongoing support.",
+    image: "/images/solutions.jpg",
+  },
 ];
 
 export type TechCategory = "frontend" | "backend" | "mobile" | "data" | "deploy";

@@ -425,16 +425,16 @@ export default function Header() {
           <div className="flex h-10 shrink-0 items-stretch overflow-hidden rounded-full border border-razo-blue/25 shadow-sm">
             <a
               href={PHONE_HREF}
+              aria-label={`Call ${PHONE}`}
               className="flex items-center gap-1.5 whitespace-nowrap bg-white px-3 text-xs font-semibold text-razo-blue transition-colors hover:bg-razo-blue/5 xl:px-4 xl:text-[13px]"
             >
               <Phone size={14} className="shrink-0" />
-              {PHONE}
+              Call Us
             </a>
             <Link
               href={homeRoutes.contact}
               className="flex items-center gap-1.5 whitespace-nowrap bg-razo-blue px-3 text-[13px] font-bold text-white transition-colors hover:bg-razo-blue-dark xl:px-4"
             >
-              <Phone size={14} className="shrink-0" />
               Book Your Session
               <ArrowRight size={14} className="hidden shrink-0 xl:block" />
             </Link>
@@ -644,17 +644,17 @@ export default function Header() {
             <div className="mt-4 flex gap-2 border-t border-gray-100 pt-4">
               <a
                 href={PHONE_HREF}
+                aria-label={`Call ${PHONE}`}
                 className="flex h-11 flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-full border border-razo-blue/25 bg-white text-xs font-semibold text-razo-blue sm:text-sm"
               >
                 <Phone size={15} className="shrink-0" />
-                {PHONE}
+                Call Us
               </a>
               <Link
                 href={homeRoutes.contact}
                 onClick={() => setIsOpen(false)}
                 className="flex h-11 flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-full bg-razo-blue text-xs font-bold text-white sm:text-sm"
               >
-                <Phone size={15} className="shrink-0" />
                 Book Session
               </Link>
             </div>

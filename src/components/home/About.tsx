@@ -22,7 +22,7 @@ export default function About() {
           >
             <div className="tilt-card relative overflow-hidden rounded-3xl shadow-2xl shadow-razo-blue/15">
               <Image
-                src="/images/about-hero.png"
+                src="https://res.cloudinary.com/ddcx08e0s/image/upload/v1782824015/lofg_ty81rw.png"
                 alt="Razobyte - We Build Websites, Applications, Digital Success"
                 width={800}
                 height={500}
