@@ -38,6 +38,7 @@ import {
   emailBlogs,
   emailFaqs,
 } from "@/lib/emailMarketingDevelopment";
+import { COMPANY_PROJECTS_PLUS } from "@/lib/company";
 import { clients } from "@/lib/data";
 import { homeRoutes } from "@/lib/routes";
 
@@ -513,7 +514,7 @@ export default function EmailMarketingPageContent() {
 
       <section className="py-14" style={{ background: `linear-gradient(135deg, #eef2ff, #e0f2fe)` }}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <h2 className="mb-2 text-center text-2xl font-bold text-razo-dark">500+ Clients Served</h2>
+          <h2 className="mb-2 text-center text-2xl font-bold text-razo-dark">{COMPANY_PROJECTS_PLUS} Projects Delivered</h2>
           <p className="mb-10 text-center text-sm text-razo-gray">Hear from businesses that grew with Razobyte email marketing.</p>
           <div className="grid gap-6 sm:grid-cols-2">
             {emailTestimonials.map((t, i) => (

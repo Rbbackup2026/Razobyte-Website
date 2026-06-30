@@ -5,6 +5,10 @@ export const COMPANY_LOGO_URL =
 /** Razobyte was founded in 2015 — used for dynamic experience counters site-wide */
 export const COMPANY_FOUNDED_YEAR = 2015;
 
+/** Company-wide metrics shown across the site */
+export const COMPANY_PROJECTS_PLUS = "750+";
+export const COMPANY_COUNTRIES_PLUS = "20+";
+
 /** Full years since founding (e.g. 2025 → 10, 2026 → 11) */
 export function getYearsOfExperience(referenceDate: Date = new Date()): number {
   return Math.max(0, referenceDate.getFullYear() - COMPANY_FOUNDED_YEAR);

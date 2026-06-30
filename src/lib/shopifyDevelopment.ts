@@ -13,7 +13,7 @@ import {
   Shield,
   Package,
 } from "lucide-react";
-import { formatYearsPlus } from "./company";
+import { formatYearsPlus, COMPANY_PROJECTS_PLUS } from "./company";
 import { homeRoutes } from "./routes";
 import type { ProductFaq } from "./productFaqs";
 
@@ -34,7 +34,7 @@ export const shopifyHighlights = [
 export function getShopifyStats() {
   return [
     { value: "98%", label: "Client Satisfaction" },
-    { value: "395+", label: "Projects Completed" },
+    { value: COMPANY_PROJECTS_PLUS, label: "Projects Completed" },
     { value: "14M+", label: "Revenue Generated" },
     { value: formatYearsPlus(), label: "Years Experience" },
   ];

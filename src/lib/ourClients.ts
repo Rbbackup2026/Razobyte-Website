@@ -18,11 +18,11 @@ import {
   Headphones,
   type LucideIcon,
 } from "lucide-react";
-import { formatYearsPlus } from "./company";
+import { formatYearsPlus, COMPANY_PROJECTS_PLUS } from "./company";
 
 export const heroStats = [
   { value: "250+", label: "Successful Clients" },
-  { value: "500+", label: "Projects Delivered" },
+  { value: COMPANY_PROJECTS_PLUS, label: "Projects Delivered" },
   { value: "98%", label: "Client Satisfaction" },
 ] as const;
 
@@ -34,7 +34,7 @@ export const trustStatistics = [
       "Delivering exceptional quality with long-term customer relationships.",
   },
   {
-    value: "500+",
+    value: COMPANY_PROJECTS_PLUS,
     title: "Projects Successfully Delivered",
     description:
       "Web, Mobile, AI, Cloud, ERP and Enterprise Solutions.",

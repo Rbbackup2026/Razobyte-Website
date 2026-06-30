@@ -28,7 +28,7 @@ import {
   Link2,
   Rocket,
 } from "lucide-react";
-import { formatYearsPlus } from "./company";
+import { formatYearsPlus, COMPANY_PROJECTS_PLUS } from "./company";
 import { homeRoutes, siteRoutes } from "./routes";
 import type { ProductFaq } from "./productFaqs";
 
@@ -54,7 +54,7 @@ export const perfHighlights = [
 export function getPerfStats() {
   return [
     { value: "98%", label: "Client Retention" },
-    { value: "395+", label: "Successful Projects" },
+    { value: COMPANY_PROJECTS_PLUS, label: "Successful Projects" },
     { value: "14M+", label: "Ad Spend Managed" },
     { value: formatYearsPlus(), label: "Years of Experience" },
   ];

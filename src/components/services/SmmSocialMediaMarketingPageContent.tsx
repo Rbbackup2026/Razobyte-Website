@@ -38,6 +38,7 @@ import {
   smmBlogs,
   smmFaqs,
 } from "@/lib/smmSocialMediaMarketingDevelopment";
+import { COMPANY_PROJECTS_PLUS } from "@/lib/company";
 import { clients } from "@/lib/data";
 import { homeRoutes } from "@/lib/routes";
 
@@ -514,7 +515,7 @@ export default function SmmSocialMediaMarketingPageContent() {
 
       <section className="py-14" style={{ background: `linear-gradient(135deg, #fff7ed, #f0fdfa)` }}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <h2 className="mb-2 text-center text-2xl font-bold text-razo-dark">500+ Clients and Counting</h2>
+          <h2 className="mb-2 text-center text-2xl font-bold text-razo-dark">{COMPANY_PROJECTS_PLUS} Projects and Counting</h2>
           <p className="mb-10 text-center text-sm text-razo-gray">Hear from brands that grew with Razobyte SMM.</p>
           <div className="grid gap-6 sm:grid-cols-2">
             {smmTestimonials.map((t, i) => (

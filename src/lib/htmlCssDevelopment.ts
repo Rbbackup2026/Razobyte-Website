@@ -16,7 +16,7 @@ import {
   DollarSign,
   Code2,
 } from "lucide-react";
-import { formatYearsPlus } from "./company";
+import { formatYearsPlus, COMPANY_PROJECTS_PLUS } from "./company";
 import { homeRoutes, siteRoutes } from "./routes";
 import type { ProductFaq } from "./productFaqs";
 
@@ -40,7 +40,7 @@ export const htmlCssHighlights = [
 export function getHtmlCssStats() {
   return [
     { value: "98%", label: "Clients Satisfied" },
-    { value: "395+", label: "Successful Projects" },
+    { value: COMPANY_PROJECTS_PLUS, label: "Successful Projects" },
     { value: "14M+", label: "Lines of Code" },
     { value: formatYearsPlus(), label: "Years of Excellence" },
   ];

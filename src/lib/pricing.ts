@@ -1,3 +1,5 @@
+import { COMPANY_PROJECTS_PLUS } from "./company";
+
 export type PlanTier = "silver" | "gold" | "diamond" | "platinum";
 
 export type PlanId = PlanTier;
@@ -268,7 +270,7 @@ export const pricingFaqs = [
 
 export const pricingStats = [
   { value: "98%", label: "Clients Satisfied" },
-  { value: "395+", label: "Successful Projects" },
+  { value: COMPANY_PROJECTS_PLUS, label: "Successful Projects" },
   { value: "14M+", label: "Total Lines of Code" },
   { value: "8+", label: "Years of Excellence" },
 ] as const;

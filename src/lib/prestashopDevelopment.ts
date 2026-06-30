@@ -17,7 +17,7 @@ import {
   Globe,
   Layers,
 } from "lucide-react";
-import { formatYearsPlus } from "./company";
+import { formatYearsPlus, COMPANY_PROJECTS_PLUS } from "./company";
 import { siteRoutes } from "./routes";
 import type { ProductFaq } from "./productFaqs";
 
@@ -38,7 +38,7 @@ export const prestashopHighlights = [
 export function getPrestashopStats() {
   return [
     { value: "97%", label: "Client Retention" },
-    { value: "390+", label: "Successful Projects" },
+    { value: COMPANY_PROJECTS_PLUS, label: "Successful Projects" },
     { value: "14M+", label: "Lines of Code" },
     { value: formatYearsPlus(), label: "Years of Industry Experience" },
   ];

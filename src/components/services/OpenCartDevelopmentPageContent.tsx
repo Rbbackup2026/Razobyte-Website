@@ -28,6 +28,7 @@ import {
   opencartTestimonials,
   opencartFaqs,
 } from "@/lib/opencartDevelopment";
+import { COMPANY_PROJECTS_PLUS } from "@/lib/company";
 import { homeRoutes, siteRoutes } from "@/lib/routes";
 
 const fadeUp = {
@@ -559,7 +560,7 @@ export default function OpenCartDevelopmentPageContent() {
             <span className="rounded bg-cyan-500/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest text-cyan-400">
               Testimonials
             </span>
-            <p className="mt-3 text-4xl font-bold text-white">500+</p>
+            <p className="mt-3 text-4xl font-bold text-white">{COMPANY_PROJECTS_PLUS}</p>
             <p className="text-sm font-semibold uppercase tracking-wider text-white/60">
               Clients Are Served
             </p>

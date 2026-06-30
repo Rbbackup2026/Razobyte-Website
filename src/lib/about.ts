@@ -23,7 +23,7 @@ import {
   Plane,
   type LucideIcon,
 } from "lucide-react";
-import { formatYearsPlus } from "./company";
+import { formatYearsPlus, COMPANY_PROJECTS_PLUS } from "./company";
 
 export type AboutCard = {
   title: string;
@@ -34,7 +34,7 @@ export type AboutCard = {
 export function getAboutStats() {
   return [
     { value: "98%", label: "Clients Satisfied" },
-    { value: "395+", label: "Successful Projects" },
+    { value: COMPANY_PROJECTS_PLUS, label: "Successful Projects" },
     { value: "14M+", label: "Lines of Code" },
     { value: formatYearsPlus(), label: "Years of Excellence" },
   ];

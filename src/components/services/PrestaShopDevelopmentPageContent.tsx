@@ -19,6 +19,7 @@ import {
   prestashopTrustBadges,
   prestashopFaqs,
 } from "@/lib/prestashopDevelopment";
+import { COMPANY_PROJECTS_PLUS } from "@/lib/company";
 import { homeRoutes } from "@/lib/routes";
 
 const MAGENTA = "#A5096B";
@@ -263,7 +264,7 @@ export default function PrestaShopDevelopmentPageContent() {
       <section className="relative overflow-hidden bg-razo-black py-14">
         <div className="absolute inset-0 grid-pattern opacity-10" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
-          <p className="mb-8 text-4xl font-bold text-white">500+ <span className="text-sm font-semibold text-white/60">Clients use Razobyte</span></p>
+          <p className="mb-8 text-4xl font-bold text-white">{COMPANY_PROJECTS_PLUS} <span className="text-sm font-semibold text-white/60">Projects Delivered</span></p>
           <div className="grid gap-5 sm:grid-cols-2">
             {prestashopTestimonials.map((t, i) => (
               <motion.div key={t.name} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="glass-card rounded-3xl p-6">

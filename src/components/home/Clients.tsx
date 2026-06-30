@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { clients } from "@/lib/data";
+import { COMPANY_PROJECTS_PLUS, COMPANY_COUNTRIES_PLUS } from "@/lib/company";
 import { Building2, Globe2, Award } from "lucide-react";
 
 function LogoCard({ name, logo }: { name: string; logo: string }) {
@@ -82,8 +83,8 @@ export default function Clients() {
             className="flex flex-wrap justify-center gap-3 lg:justify-end"
           >
             {[
-              { icon: Building2, value: "500+", label: "Projects" },
-              { icon: Globe2, value: "50+", label: "Countries" },
+              { icon: Building2, value: COMPANY_PROJECTS_PLUS, label: "Projects" },
+              { icon: Globe2, value: COMPANY_COUNTRIES_PLUS, label: "Countries" },
               { icon: Award, value: "98%", label: "Retention" },
             ].map(({ icon: Icon, value, label }) => (
               <div

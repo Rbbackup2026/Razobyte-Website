@@ -8,7 +8,7 @@ import {
   Search,
   type LucideIcon,
 } from "lucide-react";
-import { formatYearsPlus } from "./company";
+import { formatYearsPlus, COMPANY_PROJECTS_PLUS } from "./company";
 import { homeRoutes, siteRoutes } from "./routes";
 import type { ProductFaq } from "./productFaqs";
 
@@ -30,7 +30,7 @@ export const webDesignStack = [
 export function getWebsiteDesignStats() {
   return [
     { value: "98%", label: "Client Retention" },
-    { value: "395+", label: "Projects Finished" },
+    { value: COMPANY_PROJECTS_PLUS, label: "Projects Finished" },
     { value: "14M+", label: "Lines of Code" },
     { value: formatYearsPlus(), label: "Years of Experience" },
   ];

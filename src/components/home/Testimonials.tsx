@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { testimonials } from "@/lib/data";
+import { COMPANY_PROJECTS_PLUS } from "@/lib/company";
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 
 export default function Testimonials() {
@@ -35,8 +36,8 @@ export default function Testimonials() {
               Testimonials
             </span>
             <h2 className="mt-4 text-3xl font-bold sm:text-4xl lg:text-5xl">
-              500+ Clients{" "}
-              <span className="gradient-text-blue">Are Served</span>
+              {COMPANY_PROJECTS_PLUS} Projects{" "}
+              <span className="gradient-text-blue">Delivered</span>
             </h2>
             <p className="mt-4 max-w-md text-white/60">
               Words by our amazing clients. Razobyte offers a full range of

@@ -29,7 +29,7 @@ import {
   Monitor,
   PenTool,
 } from "lucide-react";
-import { formatYearsPlus } from "./company";
+import { formatYearsPlus, COMPANY_PROJECTS_PLUS } from "./company";
 import { homeRoutes, siteRoutes } from "./routes";
 import type { ProductFaq } from "./productFaqs";
 
@@ -55,7 +55,7 @@ export const maintenanceHighlights = [
 export function getMaintenanceStats() {
   return [
     { value: "98%", label: "Clients Satisfied" },
-    { value: "395+", label: "Websites Maintained" },
+    { value: COMPANY_PROJECTS_PLUS, label: "Websites Maintained" },
     { value: "99.9%", label: "Uptime Monitored" },
     { value: formatYearsPlus(), label: "Years of Excellence" },
   ];

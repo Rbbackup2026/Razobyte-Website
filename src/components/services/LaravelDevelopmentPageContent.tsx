@@ -26,6 +26,7 @@ import {
   laravelBlogs,
   laravelFaqs,
 } from "@/lib/laravelDevelopment";
+import { COMPANY_PROJECTS_PLUS } from "@/lib/company";
 import { homeRoutes, siteRoutes } from "@/lib/routes";
 
 const fadeUp = {
@@ -267,7 +268,7 @@ export default function LaravelDevelopmentPageContent() {
           <div className="mb-10 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <span className="text-xs font-semibold uppercase tracking-widest text-red-400">Testimonials</span>
-              <p className="mt-1 text-3xl font-bold text-white">500+ <span className="text-lg font-semibold text-white/60">clients are served</span></p>
+              <p className="mt-1 text-3xl font-bold text-white">{COMPANY_PROJECTS_PLUS} <span className="text-lg font-semibold text-white/60">projects delivered</span></p>
               <p className="text-sm text-white/50">Words by our amazing clients.</p>
             </div>
           </div>

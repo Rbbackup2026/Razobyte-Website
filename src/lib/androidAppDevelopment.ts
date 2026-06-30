@@ -29,7 +29,7 @@ import {
   Settings,
   Monitor,
 } from "lucide-react";
-import { formatYearsPlus } from "./company";
+import { formatYearsPlus, COMPANY_PROJECTS_PLUS } from "./company";
 import { homeRoutes, siteRoutes } from "./routes";
 import type { ProductFaq } from "./productFaqs";
 

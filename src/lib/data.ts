@@ -1,5 +1,5 @@
 import { homeRoutes, siteRoutes } from "./routes";
-import { formatYearsPlus } from "./company";
+import { formatYearsPlus, COMPANY_PROJECTS_PLUS } from "./company";
 
 export const navLinks = [
   { label: "Home", href: homeRoutes.home },
@@ -12,7 +12,7 @@ export const navLinks = [
 export function getStats() {
   return [
     { value: "98%", label: "Client Retention" },
-    { value: "395+", label: "Satisfied Clients" },
+    { value: COMPANY_PROJECTS_PLUS, label: "Projects Delivered" },
     { value: "14M+", label: "Lines of Code" },
     { value: formatYearsPlus(), label: "Years Experience" },
   ];
@@ -20,7 +20,7 @@ export function getStats() {
 
 export function getHeroStats() {
   return [
-    { value: "500+", label: "Projects" },
+    { value: COMPANY_PROJECTS_PLUS, label: "Projects" },
     { value: formatYearsPlus(), label: "Years Experience" },
   ];
 }
@@ -56,7 +56,7 @@ export const services = [
     image: "/images/service-design.jpg",
   },
   {
-    title: "Website Maintenance",
+    title: "Maintenance & Support",
     description:
       "Keep your site secure, fast, and up to date with expert ongoing support.",
     image: "/images/solutions.jpg",

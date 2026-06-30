@@ -28,6 +28,7 @@ import {
   angularBlogs,
   angularFaqs,
 } from "@/lib/angularjsDevelopment";
+import { COMPANY_PROJECTS_PLUS } from "@/lib/company";
 import { clients } from "@/lib/data";
 import { homeRoutes } from "@/lib/routes";
 
@@ -356,7 +357,7 @@ export default function AngularjsDevelopmentPageContent() {
           <Image src="/images/testimonial-bg.jpg" alt="" fill className="object-cover opacity-20" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
-          <p className="text-3xl font-bold text-white">500+ <span className="text-lg text-white/60">clients are served</span></p>
+          <p className="text-3xl font-bold text-white">{COMPANY_PROJECTS_PLUS} <span className="text-lg text-white/60">projects delivered</span></p>
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
             {angularTestimonials.map((t, i) => (
               <motion.div key={t.name} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}

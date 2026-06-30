@@ -27,7 +27,7 @@ import {
   Boxes,
   Wifi,
 } from "lucide-react";
-import { formatYearsPlus } from "./company";
+import { formatYearsPlus, COMPANY_PROJECTS_PLUS } from "./company";
 import { homeRoutes, siteRoutes } from "./routes";
 import type { ProductFaq } from "./productFaqs";
 
@@ -53,7 +53,7 @@ export const hostingHighlights = [
 export function getHostingStats() {
   return [
     { value: "98%", label: "Clients Satisfied" },
-    { value: "395+", label: "Servers Managed" },
+    { value: COMPANY_PROJECTS_PLUS, label: "Servers Managed" },
     { value: "99.9%", label: "Uptime Guaranteed" },
     { value: formatYearsPlus(), label: "Years of Excellence" },
   ];

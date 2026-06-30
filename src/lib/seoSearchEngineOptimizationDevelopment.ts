@@ -29,7 +29,7 @@ import {
   Filter,
   Hash,
 } from "lucide-react";
-import { formatYearsPlus } from "./company";
+import { formatYearsPlus, COMPANY_PROJECTS_PLUS } from "./company";
 import { homeRoutes, siteRoutes } from "./routes";
 import type { ProductFaq } from "./productFaqs";
 import { seoPricingRows } from "./pricing";
@@ -56,7 +56,7 @@ export const seoHighlights = [
 export function getSeoStats() {
   return [
     { value: "98%", label: "Client Retention" },
-    { value: "395+", label: "Completed Projects" },
+    { value: COMPANY_PROJECTS_PLUS, label: "Completed Projects" },
     { value: "14M+", label: "Lines of Code" },
     { value: formatYearsPlus(), label: "Years of Experience" },
   ];

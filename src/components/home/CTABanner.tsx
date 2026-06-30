@@ -5,10 +5,11 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, TrendingUp, Rocket, Zap, Target } from "lucide-react";
 import { homeRoutes } from "@/lib/routes";
+import { COMPANY_PROJECTS_PLUS } from "@/lib/company";
 
 const perks = [
   { icon: TrendingUp, label: "98% Client Retention" },
-  { icon: Rocket, label: "395+ Projects" },
+  { icon: Rocket, label: `${COMPANY_PROJECTS_PLUS} Projects` },
   { icon: Zap, label: "14M+ Lines of Code" },
 ];
 

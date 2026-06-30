@@ -27,6 +27,7 @@ import {
   shopifyProcess,
   shopifyFaqs,
 } from "@/lib/shopifyDevelopment";
+import { COMPANY_PROJECTS_PLUS } from "@/lib/company";
 import { homeRoutes, siteRoutes } from "@/lib/routes";
 
 const fadeUp = {
@@ -515,7 +516,7 @@ export default function ShopifyDevelopmentPageContent() {
             <span className="rounded bg-emerald-500/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest text-emerald-400">
               Testimonials
             </span>
-            <p className="mt-3 text-4xl font-bold text-white">500+</p>
+            <p className="mt-3 text-4xl font-bold text-white">{COMPANY_PROJECTS_PLUS}</p>
             <p className="text-sm font-semibold uppercase tracking-wider text-white/60">
               Clients Are Served
             </p>

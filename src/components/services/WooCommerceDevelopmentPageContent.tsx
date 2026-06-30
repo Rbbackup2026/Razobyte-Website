@@ -20,6 +20,7 @@ import {
   woocommerceTrustBadges,
   woocommerceFaqs,
 } from "@/lib/woocommerceDevelopment";
+import { COMPANY_PROJECTS_PLUS } from "@/lib/company";
 import { homeRoutes, siteRoutes } from "@/lib/routes";
 
 const fadeUp = {
@@ -227,7 +228,7 @@ export default function WooCommerceDevelopmentPageContent() {
 
       <section className="bg-razo-black py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <p className="mb-8 text-4xl font-bold text-white">500+ <span className="text-sm font-semibold text-white/60">Clients Served</span></p>
+          <p className="mb-8 text-4xl font-bold text-white">{COMPANY_PROJECTS_PLUS} <span className="text-sm font-semibold text-white/60">Projects Delivered</span></p>
           <div className="grid gap-5 sm:grid-cols-2">
             {woocommerceTestimonials.map((t) => (
               <div key={t.name} className="glass-card rounded-3xl p-6">

@@ -27,6 +27,7 @@ import {
   caseStudyTestimonials,
   contactServiceOptions,
 } from "@/lib/caseStudies";
+import { COMPANY_PROJECTS_PLUS } from "@/lib/company";
 import { homeRoutes } from "@/lib/routes";
 
 const fadeUp = {
@@ -521,7 +522,7 @@ export default function CaseStudiesPageContent() {
             <span className="rounded bg-white px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest text-razo-blue">
               Testimonials
             </span>
-            <p className="mt-3 text-4xl font-bold text-white">500+</p>
+            <p className="mt-3 text-4xl font-bold text-white">{COMPANY_PROJECTS_PLUS}</p>
             <p className="text-sm font-semibold uppercase tracking-wider text-white/60">
               Clients Are Served
             </p>

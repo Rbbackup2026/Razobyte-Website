@@ -38,6 +38,7 @@ import {
   semBlogs,
   semFaqs,
 } from "@/lib/semSearchEngineMarketingDevelopment";
+import { COMPANY_PROJECTS_PLUS } from "@/lib/company";
 import { clients } from "@/lib/data";
 import { homeRoutes } from "@/lib/routes";
 
@@ -478,7 +479,7 @@ export default function SemSearchEngineMarketingPageContent() {
 
       <section className="py-14" style={{ background: `linear-gradient(135deg, #eff6ff, #fef2f2)` }}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <h2 className="mb-2 text-center text-2xl font-bold text-razo-dark">500+ Clients Served</h2>
+          <h2 className="mb-2 text-center text-2xl font-bold text-razo-dark">{COMPANY_PROJECTS_PLUS} Projects Delivered</h2>
           <p className="mb-10 text-center text-sm text-razo-gray">Hear from businesses that scaled with Razobyte SEM.</p>
           <div className="grid gap-6 sm:grid-cols-2">
             {semTestimonials.map((t, i) => (

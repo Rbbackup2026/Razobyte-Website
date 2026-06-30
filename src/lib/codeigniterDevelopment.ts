@@ -22,7 +22,7 @@ import {
   Layout,
   Bug,
 } from "lucide-react";
-import { formatYearsPlus } from "./company";
+import { formatYearsPlus, COMPANY_PROJECTS_PLUS } from "./company";
 import { homeRoutes, siteRoutes } from "./routes";
 import type { ProductFaq } from "./productFaqs";
 
@@ -45,7 +45,7 @@ export const codeigniterHighlights = [
 export function getCodeigniterStats() {
   return [
     { value: "98%", label: "Client Satisfaction" },
-    { value: "395+", label: "Projects Completed" },
+    { value: COMPANY_PROJECTS_PLUS, label: "Projects Completed" },
     { value: "14M+", label: "Lines of Code" },
     { value: formatYearsPlus(), label: "Years of Experience" },
   ];

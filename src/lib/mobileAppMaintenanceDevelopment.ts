@@ -35,7 +35,7 @@ import {
   Calendar,
   AlertTriangle,
 } from "lucide-react";
-import { formatYearsPlus } from "./company";
+import { formatYearsPlus, COMPANY_PROJECTS_PLUS } from "./company";
 import { homeRoutes, siteRoutes } from "./routes";
 import type { ProductFaq } from "./productFaqs";
 
@@ -61,7 +61,7 @@ export const mobileMaintHighlights = [
 export function getMobileMaintStats() {
   return [
     { value: "98%", label: "Clients Satisfied" },
-    { value: "395+", label: "Apps Maintained" },
+    { value: COMPANY_PROJECTS_PLUS, label: "Apps Maintained" },
     { value: "14M+", label: "Lines of Code" },
     { value: formatYearsPlus(), label: "Years of Excellence" },
   ];
