@@ -9,8 +9,9 @@ import {
   Sparkles,
   CheckCircle2,
   Star,
+  Handshake,
 } from "lucide-react";
-import { clients } from "@/lib/data";
+import { clients, type ClientBrand } from "@/lib/clients";
 import {
   heroStats,
   trustStatistics,
@@ -42,16 +43,70 @@ function Stars({ count }: { count: number }) {
   );
 }
 
-function ClientLogoCard({ name, logo }: { name: string; logo: string }) {
+function ClientLogoCard({ client, index }: { client: ClientBrand; index: number }) {
   return (
-    <div className="tilt-card mx-2.5 flex h-[76px] w-[168px] shrink-0 items-center justify-center rounded-2xl border border-gray-100 bg-white px-4 shadow-md shadow-razo-blue/5 transition-all duration-300 hover:-translate-y-1.5 hover:border-razo-blue/25 hover:shadow-xl hover:shadow-razo-blue/15 sm:h-[84px] sm:w-[184px]">
-      <Image
-        src={logo}
-        alt={`${name} logo`}
-        width={140}
-        height={56}
-        className="h-auto w-full max-w-[128px] object-contain opacity-75 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
-      />
+    <div className="group relative mx-3 shrink-0 sm:mx-4">
+      <div
+        className="relative flex h-[88px] w-[200px] items-center gap-3 overflow-hidden rounded-2xl border bg-white px-4 shadow-md transition-all duration-300 group-hover:-translate-y-1.5 group-hover:shadow-xl sm:h-[96px] sm:w-[220px] sm:px-5"
+        style={{
+          borderColor: `${client.accent}22`,
+          boxShadow: `0 8px 24px ${client.accent}12`,
+        }}
+      >
+        <div
+          className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          style={{
+            background: `linear-gradient(135deg, ${client.accentLight} 0%, transparent 55%)`,
+          }}
+        />
+        <div
+          className="pointer-events-none absolute -right-6 -top-6 h-20 w-20 rounded-full opacity-20 blur-2xl transition-opacity group-hover:opacity-40"
+          style={{ background: client.accent }}
+        />
+
+        <div
+          className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl shadow-sm ring-1 ring-black/5 transition-transform duration-300 group-hover:scale-110 sm:h-16 sm:w-16"
+          style={{ background: `linear-gradient(145deg, ${client.accentLight}, #fff)` }}
+        >
+          <Image
+            src={client.favicon}
+            alt={`${client.name} icon`}
+            width={56}
+            height={56}
+            className="h-10 w-10 object-contain sm:h-11 sm:w-11"
+          />
+        </div>
+
+        <div className="relative min-w-0 flex-1">
+          <p className="truncate text-sm font-bold text-razo-dark sm:text-[15px]">
+            {client.name}
+          </p>
+          <p
+            className="mt-0.5 truncate text-[10px] font-semibold uppercase tracking-wide sm:text-[11px]"
+            style={{ color: client.accent }}
+          >
+            {client.industry}
+          </p>
+          <span
+            className="mt-2 inline-block rounded-full px-2 py-0.5 text-[9px] font-bold text-white opacity-0 transition-opacity group-hover:opacity-100"
+            style={{ background: client.accent }}
+          >
+            Partner
+          </span>
+        </div>
+
+        <span
+          className="absolute bottom-0 left-0 h-1 w-0 rounded-full transition-all duration-300 group-hover:w-full"
+          style={{ background: client.accent }}
+        />
+      </div>
+
+      <span
+        className="pointer-events-none absolute -left-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full text-[9px] font-bold text-white opacity-80"
+        style={{ background: client.accent }}
+      >
+        {index + 1}
+      </span>
     </div>
   );
 }
@@ -64,7 +119,11 @@ function LogoMarquee({ reverse = false }: { reverse?: boolean }) {
         className={`marquee-track flex w-max ${reverse ? "marquee-reverse" : ""}`}
       >
         {doubled.map((client, i) => (
-          <ClientLogoCard key={`${client.name}-${i}`} {...client} />
+          <ClientLogoCard
+            key={`${client.name}-${i}`}
+            client={client}
+            index={i % clients.length}
+          />
         ))}
       </div>
     </div>
@@ -263,7 +322,12 @@ export default function OurClientsPageContent() {
       </section>
 
       {/* Client logos */}
-      <section className="relative overflow-hidden border-y border-gray-100 bg-white py-16 lg:py-20">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#f3f8ff] to-razo-surface py-16 lg:py-24">
+        <div className="pointer-events-none absolute inset-0 grid-pattern opacity-[0.05]" />
+        <div className="orb pointer-events-none absolute -left-32 top-10 h-72 w-72 bg-razo-blue/15" />
+        <div className="orb pointer-events-none absolute -right-24 bottom-0 h-80 w-80 bg-sky-400/12" />
+        <div className="pointer-events-none absolute left-1/2 top-0 h-px w-[min(90%,48rem)] -translate-x-1/2 bg-gradient-to-r from-transparent via-razo-blue/30 to-transparent" />
+
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -271,11 +335,13 @@ export default function OurClientsPageContent() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <span className="text-sm font-semibold uppercase tracking-widest text-razo-blue">
+            <span className="inline-flex items-center gap-2 rounded-full border border-razo-blue/20 bg-razo-blue/10 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-razo-blue">
+              <Handshake size={13} />
               Our Valued Clients
             </span>
-            <h2 className="mt-2 text-3xl font-bold text-razo-dark sm:text-4xl">
-              Trusted by Growing Businesses
+            <h2 className="mt-4 text-3xl font-bold text-razo-dark sm:text-4xl">
+              Trusted by{" "}
+              <span className="gradient-text-blue">Growing Businesses</span>
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-razo-gray">
               Over the years, we&apos;ve partnered with startups, SMEs,
@@ -286,14 +352,68 @@ export default function OurClientsPageContent() {
           </motion.div>
 
           <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-8 flex flex-wrap items-center justify-center gap-2"
+          >
+            <Sparkles size={14} className="text-razo-blue" />
+            {clients.map((c) => (
+              <span
+                key={c.name}
+                className="rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white shadow-sm"
+                style={{ background: c.accent }}
+              >
+                {c.industry}
+              </span>
+            ))}
+          </motion.div>
+
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15 }}
-            className="mt-12 space-y-5"
+            className="relative mt-10 rounded-3xl border border-razo-blue/10 bg-white/70 p-4 shadow-inner backdrop-blur-sm sm:p-5"
           >
-            <LogoMarquee />
-            <LogoMarquee reverse />
+            <div className="pointer-events-none absolute inset-x-8 top-0 h-8 bg-gradient-to-b from-razo-blue/5 to-transparent" />
+            <div className="space-y-4">
+              <LogoMarquee />
+              <LogoMarquee reverse />
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:gap-4"
+          >
+            {clients.map((client) => (
+              <div
+                key={client.name}
+                className="flex flex-col items-center rounded-2xl border bg-white p-4 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
+                style={{ borderColor: `${client.accent}22` }}
+              >
+                <div
+                  className="flex h-14 w-14 items-center justify-center rounded-2xl"
+                  style={{ background: client.accentLight }}
+                >
+                  <Image
+                    src={client.favicon}
+                    alt={client.name}
+                    width={48}
+                    height={48}
+                    className="h-9 w-9 object-contain"
+                  />
+                </div>
+                <p className="mt-3 text-sm font-bold text-razo-dark">{client.name}</p>
+                <p className="mt-0.5 text-[10px] font-semibold" style={{ color: client.accent }}>
+                  {client.industry}
+                </p>
+              </div>
+            ))}
           </motion.div>
         </div>
       </section>

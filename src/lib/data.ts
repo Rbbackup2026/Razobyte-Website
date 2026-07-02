@@ -89,15 +89,15 @@ export const technologies: Technology[] = [
   { name: "Python", icon: "/images/tech/python.svg", category: "backend" },
   { name: "PHP", icon: "/images/tech/php.svg", category: "backend" },
   { name: "Laravel", icon: "/images/tech/laravel.svg", category: "backend" },
-  { name: "Java", icon: "/images/tech/java.svg", category: "backend" },
-  { name: "Flutter", icon: "/images/tech/flutter.svg", category: "mobile" },
+  { name: "Java", icon: "/images/tech/java.png", category: "backend" },
+  { name: "Flutter", icon: "/images/tech/flutter.png", category: "mobile" },
   { name: "React Native", icon: "/images/tech/react-native.svg", category: "mobile" },
-  { name: "Kotlin", icon: "/images/tech/kotlin.svg", category: "mobile" },
-  { name: "Swift", icon: "/images/tech/swift.svg", category: "mobile" },
-  { name: "MongoDB", icon: "/images/tech/mongodb.svg", category: "data" },
-  { name: "Docker", icon: "/images/tech/docker.svg", category: "data" },
-  { name: "AWS", icon: "/images/tech/aws.svg", category: "deploy" },
-  { name: "Google Workspace", icon: "/images/tech/google-workspace.svg", category: "deploy" },
+  { name: "Kotlin", icon: "/images/tech/kotlin.png", category: "mobile" },
+  { name: "Swift", icon: "/images/tech/swift.png", category: "mobile" },
+  { name: "MongoDB", icon: "/images/tech/mongodb.png", category: "data" },
+  { name: "Docker", icon: "/images/tech/docker.png", category: "data" },
+  { name: "AWS", icon: "/images/tech/aws.png", category: "deploy" },
+  { name: "Google Workspace", icon: "/images/tech/google-workspace.png", category: "deploy" },
   { name: "cPanel", icon: "/images/tech/cpanel.svg", category: "deploy" },
   { name: "Hostinger", icon: "/images/tech/hostinger.svg", category: "deploy" },
 ];
@@ -214,16 +214,8 @@ export const portfolio = [
   },
 ];
 
-export const clients = [
-  { name: "Subway", logo: "/images/clients/subway.svg" },
-  { name: "TechCorp", logo: "/images/clients/techcorp.svg" },
-  { name: "MediCare+", logo: "/images/clients/medicare.svg" },
-  { name: "ShopEase", logo: "/images/clients/shopease.svg" },
-  { name: "EduLearn", logo: "/images/clients/edulearn.svg" },
-  { name: "FinanceHub", logo: "/images/clients/financehub.svg" },
-  { name: "GreenEnergy", logo: "/images/clients/greenenergy.svg" },
-  { name: "FoodChain", logo: "/images/clients/foodchain.svg" },
-];
+export { clients } from "./clients";
+export type { ClientBrand } from "./clients";
 
 export const footerServices = {
   Design: ["UI/UX Design", "Website Design"],
