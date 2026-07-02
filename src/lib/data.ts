@@ -31,35 +31,41 @@ export const services = [
     description:
       "Scalable, high-performance websites built with modern frameworks.",
     image: "/images/service-web.jpg",
+    href: siteRoutes.reactjsDevelopment,
   },
   {
     title: "Mobile App Development",
     description:
       "Native & cross-platform apps that deliver seamless experiences.",
     image: "/images/service-mobile.jpg",
+    href: siteRoutes.androidAppDevelopment,
   },
   {
     title: "Digital Marketing",
     description:
       "Data-driven campaigns that boost visibility and conversions.",
     image: "/images/service-marketing.jpg",
+    href: siteRoutes.seoSearchEngineOptimization,
   },
   {
     title: "E-Commerce Solutions",
     description: "End-to-end online stores optimized for growth and sales.",
     image: "/images/service-ecommerce.jpg",
+    href: siteRoutes.shopifyDevelopment,
   },
   {
     title: "UI/UX Design",
     description:
       "Human-centered interfaces that delight users and drive results.",
     image: "/images/service-design.jpg",
+    href: siteRoutes.uiUxDesign,
   },
   {
     title: "Maintenance & Support",
     description:
       "Keep your site secure, fast, and up to date with expert ongoing support.",
     image: "/images/solutions.jpg",
+    href: siteRoutes.websiteMaintenance,
   },
 ];
 

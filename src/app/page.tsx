@@ -17,7 +17,6 @@ import Clients from "@/components/home/Clients";
 import ContactForm from "@/components/home/ContactForm";
 import Testimonials from "@/components/home/Testimonials";
 import Portfolio from "@/components/home/Portfolio";
-import CTABanner2 from "@/components/home/CTABanner2";
 
 export default function Home() {
   return (
@@ -41,7 +40,6 @@ export default function Home() {
         <ContactForm />
         <Testimonials />
         <Portfolio />
-        <CTABanner2 />
       </main>
       <Footer />
     </>

@@ -2,6 +2,11 @@
 export const COMPANY_LOGO_URL =
   "https://res.cloudinary.com/ddcx08e0s/image/upload/v1782451137/COMPANY_LOGO_-razobyte-01_mzpe9n.png";
 
+/** Site favicon — rb mark (circular) */
+export const COMPANY_FAVICON_URL = "/favicon.ico";
+export const COMPANY_FAVICON_PNG_URL = "/favicon.png";
+export const COMPANY_APPLE_ICON_URL = "/apple-icon.png";
+
 /** Razobyte was founded in 2015 — used for dynamic experience counters site-wide */
 export const COMPANY_FOUNDED_YEAR = 2015;
 

@@ -1,13 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { portfolio } from "@/lib/data";
 
 export default function Portfolio() {
-  const [active, setActive] = useState(0);
-
   return (
     <section id="industry" className="relative bg-razo-surface py-24 lg:py-32">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -27,24 +24,13 @@ export default function Portfolio() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {portfolio.map((item, i) => (
-            <motion.div
+            <motion.article
               key={item.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              onClick={() => setActive(i)}
-              className={`tilt-card group cursor-pointer overflow-hidden rounded-3xl transition-all ${
-                active === i
-                  ? "ring-2 ring-razo-blue shadow-xl shadow-razo-blue/20"
-                  : ""
-              }`}
-              style={{
-                transform:
-                  active === i
-                    ? "rotateY(-2deg) rotateX(2deg) scale(1.02)"
-                    : undefined,
-              }}
+              className="overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-lg shadow-razo-blue/5"
             >
               <div className="relative h-56 overflow-hidden sm:h-64">
                 <Image
@@ -52,34 +38,18 @@ export default function Portfolio() {
                   alt={item.title}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-razo-dark/90 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-2 opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-razo-blue-light">
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-razo-dark via-razo-dark/90 to-transparent px-5 pb-5 pt-16">
+                  <span className="inline-block rounded-full bg-razo-blue/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white">
                     {item.category}
                   </span>
-                  <h3 className="mt-1 text-lg font-bold text-white">
+                  <h3 className="mt-2 text-lg font-bold leading-snug text-white">
                     {item.title}
                   </h3>
                 </div>
               </div>
-            </motion.div>
-          ))}
-        </div>
-
-        <div className="mt-10 flex justify-center gap-2">
-          {portfolio.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setActive(i)}
-              aria-label={`Portfolio item ${i + 1}`}
-              className={`h-2.5 rounded-full transition-all ${
-                active === i
-                  ? "w-8 bg-razo-blue"
-                  : "w-2.5 bg-razo-blue/30 hover:bg-razo-blue/50"
-              }`}
-            />
+            </motion.article>
           ))}
         </div>
       </div>

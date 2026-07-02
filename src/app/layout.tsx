@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { Poppins, Roboto } from "next/font/google";
 import PreloaderGate from "@/components/layout/PreloaderGate";
 import BackToTop from "@/components/layout/BackToTop";
+import {
+  COMPANY_APPLE_ICON_URL,
+  COMPANY_FAVICON_PNG_URL,
+  COMPANY_FAVICON_URL,
+} from "@/lib/company";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -29,6 +34,16 @@ export const metadata: Metadata = {
     "web development",
     "digital marketing",
   ],
+  icons: {
+    icon: [
+      { url: COMPANY_FAVICON_URL, sizes: "32x32", type: "image/x-icon" },
+      { url: COMPANY_FAVICON_PNG_URL, sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: COMPANY_APPLE_ICON_URL, sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: [COMPANY_FAVICON_URL],
+  },
 };
 
 export default function RootLayout({
@@ -42,6 +57,18 @@ export default function RootLayout({
       className={`${poppins.variable} ${roboto.variable} scroll-smooth`}
     >
       <head>
+        <link rel="icon" href={COMPANY_FAVICON_URL} sizes="32x32" />
+        <link
+          rel="icon"
+          href={COMPANY_FAVICON_PNG_URL}
+          type="image/png"
+          sizes="512x512"
+        />
+        <link
+          rel="apple-touch-icon"
+          href={COMPANY_APPLE_ICON_URL}
+          sizes="180x180"
+        />
         <style
           dangerouslySetInnerHTML={{
             __html: `
