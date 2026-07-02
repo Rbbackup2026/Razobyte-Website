@@ -59,7 +59,7 @@ export default function AboutPageContent() {
             <p className="mt-4 text-base leading-relaxed text-white/60">
               We don&apos;t believe in one-size-fits-all shortcuts. Every business
               has its own story — we help shape that story through thoughtful web
-              development, strategic marketing, and intelligent automation.
+              development, strategic marketing, and intelligent automation
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center gap-1.5 text-sm text-white/50">
