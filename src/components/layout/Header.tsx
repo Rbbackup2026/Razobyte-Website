@@ -11,6 +11,7 @@ import { sectionIdFromHref, homeRoutes } from "@/lib/routes";
 import ServicesMegaMenu from "@/components/layout/ServicesMegaMenu";
 import AboutDropdown from "@/components/layout/AboutDropdown";
 import IndustryDropdown from "@/components/layout/IndustryDropdown";
+import NavSearch from "@/components/layout/NavSearch";
 import { isAboutSectionPath } from "@/lib/aboutNav";
 import { industrySectionPaths } from "@/lib/industryNav";
 import { COMPANY_LOGO_URL } from "@/lib/company";
@@ -53,13 +54,13 @@ export default function Header() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const [mobileIndustryOpen, setMobileIndustryOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
   const [searchOpen, setSearchOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("home");
   const servicesRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const industryRef = useRef<HTMLDivElement>(null);
-  const searchRef = useRef<HTMLDivElement>(null);
+  const desktopSearchRef = useRef<HTMLDivElement>(null);
+  const mobileSearchRef = useRef<HTMLDivElement>(null);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const isHome = pathname === "/";
@@ -149,6 +150,9 @@ export default function Header() {
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.closest("[data-search-toggle]")) return;
+
       if (
         servicesRef.current &&
         !servicesRef.current.contains(e.target as Node)
@@ -168,8 +172,8 @@ export default function Header() {
         setIndustryOpen(false);
       }
       if (
-        searchRef.current &&
-        !searchRef.current.contains(e.target as Node)
+        !desktopSearchRef.current?.contains(e.target as Node) &&
+        !mobileSearchRef.current?.contains(e.target as Node)
       ) {
         setSearchOpen(false);
       }
@@ -209,12 +213,6 @@ export default function Header() {
 
   const closeIndustry = () => {
     closeTimerRef.current = setTimeout(() => setIndustryOpen(false), 150);
-  };
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) window.location.href = homeRoutes.services;
-    setSearchOpen(false);
   };
 
   return (
@@ -399,26 +397,12 @@ export default function Header() {
         {/* Desktop actions — single line */}
         <div className="hidden shrink-0 items-center gap-2 lg:flex">
           {/* Search */}
-          <div ref={searchRef}>
-            <form onSubmit={handleSearch}>
-              <div
-                className={`flex h-10 items-center overflow-hidden rounded-full border bg-gray-50 transition-all ${
-                  searchOpen
-                    ? "w-44 border-razo-blue/30 ring-1 ring-razo-blue/15"
-                    : "w-36 border-gray-200 xl:w-40"
-                }`}
-              >
-                <Search size={15} className="ml-3 shrink-0 text-gray-400" />
-                <input
-                  type="search"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  onFocus={() => setSearchOpen(true)}
-                  placeholder="Search..."
-                  className="min-w-0 flex-1 bg-transparent py-2 pr-3 pl-1.5 text-[13px] text-gray-700 outline-none placeholder:text-gray-400"
-                />
-              </div>
-            </form>
+          <div ref={desktopSearchRef}>
+            <NavSearch
+              variant="desktop"
+              open={searchOpen}
+              onOpenChange={setSearchOpen}
+            />
           </div>
 
           {/* Phone + CTA — unified pill, one line */}
@@ -451,7 +435,9 @@ export default function Header() {
             <Phone size={17} />
           </a>
           <button
+            type="button"
             onClick={() => setSearchOpen((p) => !p)}
+            data-search-toggle
             aria-label="Search"
             className="flex h-9 w-9 items-center justify-center rounded-full text-gray-600 hover:bg-gray-100"
           >
@@ -469,22 +455,17 @@ export default function Header() {
 
       {/* Mobile search */}
       {searchOpen && (
-        <form
-          onSubmit={handleSearch}
-          className="border-t border-gray-100 px-4 py-2.5 lg:hidden"
+        <div
+          ref={mobileSearchRef}
+          className="relative border-t border-gray-100 px-4 py-2.5 lg:hidden"
         >
-          <div className="flex h-10 items-center rounded-full border border-gray-200 bg-gray-50 px-3">
-            <Search size={15} className="shrink-0 text-gray-400" />
-            <input
-              type="search"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search..."
-              className="min-w-0 flex-1 bg-transparent py-2 pl-2 text-sm outline-none"
-              autoFocus
-            />
-          </div>
-        </form>
+          <NavSearch
+            variant="mobile"
+            open={searchOpen}
+            onOpenChange={setSearchOpen}
+            onNavigate={() => setSearchOpen(false)}
+          />
+        </div>
       )}
 
       {/* Mobile menu */}

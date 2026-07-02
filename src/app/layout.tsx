@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Roboto } from "next/font/google";
 import PreloaderGate from "@/components/layout/PreloaderGate";
+import BackToTop from "@/components/layout/BackToTop";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -52,7 +53,10 @@ export default function RootLayout({
         />
       </head>
       <body className={`${roboto.className} min-h-screen antialiased`}>
-        <PreloaderGate>{children}</PreloaderGate>
+        <PreloaderGate>
+          {children}
+          <BackToTop />
+        </PreloaderGate>
       </body>
     </html>
   );

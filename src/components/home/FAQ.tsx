@@ -4,13 +4,15 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faqs } from "@/lib/data";
 import { Plus, Minus } from "lucide-react";
+import FAQBackground from "@/components/shared/FAQBackground";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="relative bg-razo-surface py-24 lg:py-32">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden bg-razo-surface py-24 lg:py-32">
+      <FAQBackground variant="light" />
+      <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

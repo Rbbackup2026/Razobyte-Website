@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import type { ProductFaq } from "@/lib/productFaqs";
+import FAQBackground from "@/components/shared/FAQBackground";
 
 type ProductFAQProps = {
   faqs: ProductFaq[];
@@ -25,13 +26,14 @@ export default function ProductFAQ({
 
   return (
     <section
-      className={
+      className={`relative overflow-hidden ${
         isLight
           ? "border-t border-gray-100 bg-razo-surface py-20 lg:py-28"
           : "border-t border-white/5 bg-razo-black py-20 lg:py-28"
-      }
+      }`}
     >
-      <div className="mx-auto max-w-3xl px-4 sm:px-6">
+      <FAQBackground variant={isLight ? "light" : "dark"} />
+      <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
